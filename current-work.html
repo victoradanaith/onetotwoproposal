@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>1:2 Coffee — Current Work</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;600&family=Prompt:wght@300;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--ink:#141414;--paper:#FFFFFF;--stone:#F5F4F1;--roast:#8B5E3C;--grey:#6B6B6B;--mist:#E3E1DC}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Outfit','Prompt',-apple-system,sans-serif;font-weight:300;color:var(--ink);background:var(--paper);line-height:1.65;font-size:17px}
+  body.th{line-height:1.85}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 28px}
+  body:not(.th) .th{display:none}
+  body.th .en{display:none}
+
+  header{border-bottom:2px solid var(--ink);padding:16px 0;position:sticky;top:0;background:var(--paper);z-index:10}
+  header .wrap{display:flex;justify-content:space-between;align-items:baseline}
+  .logo{font-weight:600;font-size:21px;letter-spacing:1px}
+  .logo span{color:var(--roast)}
+  header nav{font-family:'IBM Plex Mono','Prompt',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase}
+  header nav a{color:var(--grey);text-decoration:none;margin-left:20px}
+  header nav a:hover{color:var(--ink)}
+  @media(max-width:700px){header nav{display:none}}
+
+  .part-head{padding:80px 0 20px}
+  .part-num{font-family:'IBM Plex Mono','Prompt',monospace;font-size:13px;letter-spacing:3px;color:var(--roast)}
+  .part-head h2{font-weight:600;font-size:clamp(34px,6vw,60px);letter-spacing:.5px;text-transform:uppercase;margin-top:8px}
+  .part-head .sub{color:var(--grey);max-width:720px;margin-top:12px;font-size:18px}
+  section{padding:46px 0;border-bottom:1px solid var(--mist)}
+  .sec-label{display:flex;align-items:baseline;gap:16px;margin-bottom:26px}
+  .sec-num{font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:14px;color:var(--roast)}
+  .sec-label h3{font-weight:600;font-size:clamp(20px,3vw,28px);letter-spacing:.5px;text-transform:uppercase}
+  p.body{max-width:760px;color:#333;margin-bottom:16px}
+  strong{font-weight:600}
+
+  .receipt{font-family:'IBM Plex Mono','Prompt',monospace;border:1.5px solid var(--ink);max-width:840px;background:var(--paper);margin-top:30px;font-size:13.5px}
+  .receipt .r-head{border-bottom:1.5px dashed var(--ink);padding:16px 22px;text-align:center;font-weight:600;letter-spacing:2px}
+  .receipt .r-row{display:grid;grid-template-columns:44px 1fr auto;gap:12px;padding:12px 22px;border-bottom:1px dashed var(--mist);align-items:baseline}
+  .receipt .r-row:last-of-type{border-bottom:1.5px dashed var(--ink)}
+  .receipt .r-id{font-weight:600}
+  .receipt .st{font-weight:600;white-space:nowrap}
+  .st.done{color:var(--roast)} .st.wait{color:var(--grey)}
+  .receipt .r-foot{padding:14px 22px;text-align:center;font-size:11px;color:var(--grey);letter-spacing:1px}
+  @media(max-width:600px){.receipt .r-row{grid-template-columns:40px 1fr}.receipt .st{grid-column:2}}
+
+  .method{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:34px;max-width:840px}
+  @media(max-width:760px){.method{grid-template-columns:1fr}}
+  .m-step{border:1.5px solid var(--ink);padding:20px}
+  .m-step .n{font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:12px;color:var(--roast);letter-spacing:2px}
+  .m-step h4{font-weight:600;font-size:17px;margin:8px 0 6px}
+  .m-step p{font-size:14px;color:#444}
+
+  .needs{border:1.5px solid var(--roast);max-width:840px;margin-top:34px;padding:22px 26px;background:var(--stone)}
+  .needs h4{font-weight:600;font-size:15px;letter-spacing:1.5px;text-transform:uppercase;font-family:'IBM Plex Mono','Prompt',monospace;color:var(--roast);margin-bottom:12px}
+  .needs p{font-size:15.5px;color:#333;padding:6px 0;border-bottom:1px dashed var(--mist)}
+  .needs p:last-child{border-bottom:none}
+
+  .steps{max-width:800px;margin-top:28px}
+  .step{display:grid;grid-template-columns:56px 1fr;gap:18px;padding:16px 0;border-bottom:1px solid var(--mist);align-items:baseline}
+  .step .s-n{font-family:'IBM Plex Mono',monospace;font-weight:600;color:var(--roast)}
+  .step p{color:#333}
+
+  footer{padding:50px 0 90px;color:var(--grey);font-size:13px}
+  footer .logo{font-size:17px;margin-bottom:8px}
+  footer a{color:var(--roast)}
+
+  .lang-toggle{position:fixed;right:22px;bottom:22px;z-index:50;background:var(--ink);color:var(--paper);border:none;font-family:'IBM Plex Mono','Prompt',monospace;font-size:12px;letter-spacing:2px;padding:12px 18px;cursor:pointer}
+  .lang-toggle:hover{background:var(--roast)}
+
+  .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="logo">1<span>:</span>2 × DX</div>
+    <nav>
+      <a href="index.html#part1"><span class="en">1 · Vision</span><span class="th">1 · วิสัยทัศน์</span></a>
+      <a href="index.html#part2"><span class="en">2 · Departments</span><span class="th">2 · รายแผนก</span></a>
+      <a href="current-work.html"><span class="en">3 · Current Work</span><span class="th">3 · งานปัจจุบัน</span></a>
+    </nav>
+  </div>
+</header>
+
+<div class="part-head wrap">
+  <div class="part-num">PART 3 : 3</div>
+  <h2><span class="en">Current Work</span><span class="th">งานปัจจุบัน</span></h2>
+  <div class="sub"><span class="en">Not a plan on paper — accounting automation is live in testing today, with a proven rollout method. The role shift is already happening: from keying data to reviewing and approving.</span><span class="th">ไม่ใช่แผนบนกระดาษ — ระบบบัญชีอัตโนมัติกำลังทดสอบจริงอยู่วันนี้ พร้อมวิธีขึ้นระบบที่พิสูจน์แล้ว การเปลี่ยนบทบาทเกิดขึ้นแล้ว: จากคีย์ข้อมูล เป็นตรวจและอนุมัติ</span></div>
+</div>
+
+<section class="reveal">
+  <div class="wrap">
+    <div class="sec-label"><span class="sec-num">3:1</span><h3><span class="en">Accounting Automation Status</span><span class="th">สถานะระบบบัญชีอัตโนมัติ</span></h3></div>
+    <p class="body"><span class="en"><strong>M1</strong> reads landlord and utility bills automatically — including scans and photos — matches vendors, splits line items and withholding tax, and checks document completeness per branch. <strong>M3</strong>'s reconciliation logic was rebuilt from the team's manual method and <strong>matched their results on every figure</strong> — the system is proven correct.</span><span class="th"><strong>M1</strong> อ่านบิลผู้ให้เช่าและค่าสาธารณูปโภคอัตโนมัติ — รวมถึงบิลสแกนและถ่ายรูป — จับคู่คู่ค้า แยกรายการและภาษีหัก ณ ที่จ่าย และตรวจความครบถ้วนของเอกสารรายสาขา ส่วน <strong>M3</strong> ถอดตรรกะกระทบยอดจากวิธีที่ทีมทำมือ และ<strong>ผลตรงกันทุกยอด</strong> — พิสูจน์ความถูกต้องของระบบแล้ว</span></p>
+
+    <div class="receipt" role="table">
+      <div class="r-head"><span class="en">ACCOUNTING AUTOMATION — STATUS</span><span class="th">ระบบบัญชีอัตโนมัติ — สถานะ</span></div>
+      <div class="r-row"><span class="r-id">M1</span><span><span class="en">Recurring bills — rent / utilities</span><span class="th">บิลประจำ — ค่าเช่า / น้ำ / ไฟ</span></span><span class="st done"><span class="en">90% · IN TEST</span><span class="th">90% · กำลังทดสอบ</span></span></div>
+      <div class="r-row"><span class="r-id">M2</span><span><span class="en">Petty cash</span><span class="th">เงินสดย่อย</span></span><span class="st wait"><span class="en">QUEUED</span><span class="th">รอคิว</span></span></div>
+      <div class="r-row"><span class="r-id">M3</span><span><span class="en">Sales ↔ bank ↔ books reconciliation</span><span class="th">กระทบยอดขาย ↔ ธนาคาร ↔ บัญชี</span></span><span class="st done"><span class="en">VALIDATED</span><span class="th">ผ่านการพิสูจน์</span></span></div>
+      <div class="r-row"><span class="r-id">M4</span><span><span class="en">Fixed assets &amp; depreciation</span><span class="th">ทะเบียนทรัพย์สิน &amp; ค่าเสื่อม</span></span><span class="st wait"><span class="en">AWAITING POLICY</span><span class="th">รอนโยบาย</span></span></div>
+      <div class="r-row"><span class="r-id">M5</span><span><span class="en">3-way matching — PO / GR / invoice</span><span class="th">ตรวจ 3 ทาง — PO / รับของ / ใบวางบิล</span></span><span class="st wait"><span class="en">QUEUED</span><span class="th">รอคิว</span></span></div>
+      <div class="r-foot"><span class="en">FIVE MODULES · ONE ACCOUNTING TEAM · ROLE SHIFT IN PROGRESS</span><span class="th">ห้าโมดูล · ทีมบัญชีเดียว · การเปลี่ยนบทบาทกำลังเกิดขึ้น</span></div>
+    </div>
+
+    <p class="body" style="margin-top:26px"><span class="en">Alongside the modules, a data-quality investigation in TRCloud identified why open purchase orders don't reconcile with payables — a broken document chain rather than hidden debt — with a defined cleanup path that becomes part of M5.</span><span class="th">ควบคู่กับโมดูลต่าง ๆ การตรวจสอบคุณภาพข้อมูลใน TRCloud พบสาเหตุที่ใบสั่งซื้อค้างรับไม่ตรงกับเจ้าหนี้ — เป็นปัญหาห่วงโซ่เอกสารขาดตอน ไม่ใช่หนี้ที่มองไม่เห็น — พร้อมแนวทางแก้ไขที่จะรวมอยู่ใน M5</span></p>
+  </div>
+</section>
+
+<section class="reveal">
+  <div class="wrap">
+    <div class="sec-label"><span class="sec-num">3:2</span><h3><span class="en">The Rollout Method</span><span class="th">วิธีขึ้นระบบ</span></h3></div>
+    <p class="body"><span class="en">Every module goes live the same way — proven with M1, standard for everything that follows.</span><span class="th">ทุกโมดูลขึ้นระบบด้วยวิธีเดียวกัน — พิสูจน์แล้วกับ M1 และเป็นมาตรฐานสำหรับทุกโมดูลถัดไป</span></p>
+    <div class="method">
+      <div class="m-step"><div class="n">STEP 1</div><h4><span class="en">Backtest</span><span class="th">ทดสอบย้อนหลัง</span></h4><p><span class="en">Run the system on last month's real data. Compare against actual results.</span><span class="th">รันระบบกับข้อมูลจริงเดือนที่ผ่านมา เทียบผลกับของจริง</span></p></div>
+      <div class="m-step"><div class="n">STEP 2</div><h4><span class="en">Parallel Run</span><span class="th">รันคู่ขนาน</span></h4><p><span class="en">System and old process run side by side. Daily comparison until results match consistently.</span><span class="th">ระบบใหม่รันคู่กับวิธีเดิม เทียบผลรายวันจนตรงกันสม่ำเสมอ</span></p></div>
+      <div class="m-step"><div class="n">STEP 3</div><h4><span class="en">Cutover</span><span class="th">ตัดสวิตช์</span></h4><p><span class="en">Switch on evidence, not hope. The old process retires only when the numbers prove it.</span><span class="th">เปลี่ยนระบบด้วยหลักฐาน ไม่ใช่ความหวัง — เลิกวิธีเดิมเมื่อตัวเลขพิสูจน์แล้วเท่านั้น</span></p></div>
+    </div>
+  </div>
+</section>
+
+<section class="reveal">
+  <div class="wrap">
+    <div class="sec-label"><span class="sec-num">3:3</span><h3><span class="en">Needed From 1:2</span><span class="th">สิ่งที่ต้องการจาก 1:2</span></h3></div>
+    <div class="needs">
+      <h4><span class="en">TO UNBLOCK THE QUEUE</span><span class="th">เพื่อปลดล็อกคิวงาน</span></h4>
+      <p><span class="en"><strong>Vendor master</strong> — names + tax IDs, so the system matches suppliers automatically (→ S1, M1)</span><span class="th"><strong>ฐานข้อมูลคู่ค้า</strong> — ชื่อ + เลขผู้เสียภาษี เพื่อให้ระบบจับคู่อัตโนมัติ (→ S1, M1)</span></p>
+      <p><span class="en"><strong>Bill-intake email</strong> — one address that routes incoming bills to the system folder (→ M1)</span><span class="th"><strong>อีเมลรับบิล</strong> — อีเมลกลางที่ส่งบิลเข้าโฟลเดอร์ระบบอัตโนมัติ (→ M1)</span></p>
+      <p><span class="en"><strong>Depreciation policy</strong> — from the accounting team, to start the asset registry (→ M4)</span><span class="th"><strong>นโยบายค่าเสื่อม</strong> — จากทีมบัญชี เพื่อเริ่มทะเบียนทรัพย์สิน (→ M4)</span></p>
+    </div>
+  </div>
+</section>
+
+<section class="reveal">
+  <div class="wrap">
+    <div class="sec-label"><span class="sec-num">3:4</span><h3><span class="en">Next Steps</span><span class="th">ขั้นตอนถัดไป</span></h3></div>
+    <div class="steps">
+      <div class="step"><span class="s-n">01</span><p><span class="en"><strong>Complete the M1 parallel run</strong> — daily comparison against the old process through July, cutover on evidence.</span><span class="th"><strong>รันคู่ขนาน M1 ให้ครบ</strong> — เทียบผลรายวันกับวิธีเดิมตลอดเดือนกรกฎาคม แล้วตัดสวิตช์ด้วยหลักฐาน</span></p></div>
+      <div class="step"><span class="s-n">02</span><p><span class="en"><strong>Unblock the queue</strong> — the three items above, then M2 and M4 start immediately.</span><span class="th"><strong>ปลดล็อกคิวงาน</strong> — สามรายการข้างต้น แล้ว M2 และ M4 เริ่มได้ทันที</span></p></div>
+      <div class="step"><span class="s-n">03</span><p><span class="en"><strong>Kick off the foundation phase</strong> — registry design workshop, Claude Cowork accounts per department (E1), task-ledger baselines (E3).</span><span class="th"><strong>เริ่มเฟสวางรากฐาน</strong> — เวิร์กช็อปออกแบบทะเบียนข้อมูล ตั้งค่า Claude Cowork รายแผนก (E1) และเก็บฐานข้อมูลบัญชีงาน (E3)</span></p></div>
+      <div class="step"><span class="s-n">04</span><p><span class="en"><strong>Select the next wave together</strong> — our recommendation: S1 · B5 · T2 · H3, measured against the north star: hours unloaded per person.</span><span class="th"><strong>เลือกโมดูลชุดถัดไปร่วมกัน</strong> — เราแนะนำ S1 · B5 · T2 · H3 วัดผลด้วยเป้าหมายสูงสุด: ชั่วโมงงานที่ปลดออกต่อคน</span></p></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="logo">1<span style="color:var(--roast)">:</span>2 × DX</div>
+    <span class="en">Prepared July 2026 · Confidential — for One To Two Coffee Company discussion only. · <a href="index.html">← Back to Parts 1 &amp; 2</a></span>
+    <span class="th">จัดทำ กรกฎาคม 2569 · เอกสารลับ — สำหรับการหารือกับ One To Two Coffee Company เท่านั้น · <a href="index.html">← กลับสู่ส่วนที่ 1 &amp; 2</a></span>
+  </div>
+</footer>
+
+<button class="lang-toggle" id="langBtn">ไทย</button>
+
+<script>
+  const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  const btn=document.getElementById('langBtn');
+  btn.addEventListener('click',()=>{document.body.classList.toggle('th');btn.textContent=document.body.classList.contains('th')?'EN':'ไทย';});
+</script>
+</body>
+</html>
