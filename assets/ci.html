@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1:2 CI — Type &amp; Color</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;600&family=Prompt:wght@300;600&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  /* ============ 1:2 CI TOKENS ============ */
+  :root{
+    --ink:   #141414;  /* primary text, black blocks   */
+    --paper: #FFFFFF;  /* background                    */
+    --stone: #F5F4F1;  /* section background            */
+    --roast: #8B5E3C;  /* accent — use sparingly        */
+    --grey:  #6B6B6B;  /* secondary text                */
+    --mist:  #E3E1DC;  /* rules, borders                */
+
+    /* Outfit first for Latin; Prompt takes over for Thai glyphs */
+    --font-en: 'Outfit','Prompt',sans-serif;
+    --font-th: 'Prompt','Outfit',sans-serif;
+  }
+
+  /* ============ TYPE ROLES ============ */
+  .ci-title{
+    font-family:var(--font-en);
+    font-weight:600;              /* SemiBold */
+    font-size:52px;
+    line-height:1.1;
+    letter-spacing:-0.5px;
+    color:var(--ink);
+  }
+  .ci-title-th{ font-family:var(--font-th); letter-spacing:0; }
+
+  .ci-heading{
+    font-family:var(--font-en);
+    font-weight:600;              /* SemiBold */
+    font-size:26px;
+    letter-spacing:0;
+    color:var(--ink);
+  }
+  .ci-heading-th{ font-family:var(--font-th); }
+
+  .ci-text{
+    font-family:var(--font-en);
+    font-weight:300;              /* Light */
+    font-size:17px;
+    line-height:1.7;
+    color:var(--ink);
+  }
+  .ci-text-th{ font-family:var(--font-th); line-height:1.85; }
+  .ci-text-secondary{ color:var(--grey); }
+
+  .ci-label{                      /* utility: numbers, statuses, specs */
+    font-family:'IBM Plex Mono',monospace;
+    font-weight:600;
+    font-size:13px;
+    letter-spacing:2.5px;
+    text-transform:uppercase;
+    color:var(--roast);
+  }
+
+  /* ============ demo page chrome (not part of CI) ============ */
+  body{margin:0;background:var(--paper);font-family:var(--font-en);font-weight:300;color:var(--ink)}
+  .page{max-width:820px;margin:0 auto;padding:60px 28px}
+  .spec{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--grey);letter-spacing:1px;margin:8px 0 0}
+  .block{padding:34px 0;border-bottom:1px solid var(--mist)}
+  .swatches{display:flex;gap:0;margin-top:20px;border:1.5px solid var(--ink)}
+  .sw{flex:1;height:84px;position:relative}
+  .sw span{position:absolute;bottom:8px;left:10px;font-family:'IBM Plex Mono',monospace;font-size:10.5px}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="block">
+    <div class="ci-label">1:2 Coffee × DX — Corporate Identity</div>
+    <div class="spec">LABEL (utility) · IBM Plex Mono 600 · 13px · tracking 2.5px · --roast</div>
+  </div>
+
+  <div class="block">
+    <div class="ci-title">Everyday Coffee<span style="color:var(--roast)">:</span> Scaled</div>
+    <div class="spec">EN TITLE · Outfit SemiBold 600 · 52px · --ink · colon accent in --roast</div>
+    <div class="ci-title ci-title-th" style="margin-top:26px">กาแฟทุกวัน<span style="color:var(--roast)">:</span> ขยายทุกสาขา</div>
+    <div class="spec">TH TITLE · Prompt SemiBold 600 · 52px · --ink</div>
+  </div>
+
+  <div class="block">
+    <div class="ci-heading">Section Heading</div>
+    <div class="spec">EN HEADING · Outfit SemiBold 600 · 26px · --ink</div>
+    <div class="ci-heading ci-heading-th" style="margin-top:18px">หัวข้อประจำส่วน</div>
+    <div class="spec">TH HEADING · Prompt SemiBold 600 · 26px · --ink</div>
+  </div>
+
+  <div class="block">
+    <p class="ci-text">Normal text is set in Outfit Light. Black on white, generous line height, no decoration — the brand speaks the way it prices coffee: simple and honest.</p>
+    <div class="spec">EN TEXT · Outfit Light 300 · 17px · line-height 1.7 · --ink</div>
+    <p class="ci-text ci-text-th" style="margin-top:18px">ข้อความปกติใช้ Prompt Light สีดำบนพื้นขาว เว้นบรรทัดสบายตา ไม่ตกแต่งเกินจำเป็น — เรียบง่ายและตรงไปตรงมาเหมือนราคากาแฟของเรา</p>
+    <div class="spec">TH TEXT · Prompt Light 300 · 17px · line-height 1.85 · --ink</div>
+    <p class="ci-text ci-text-secondary" style="margin-top:18px">Secondary text — same face in grey, for captions and supporting notes.</p>
+  </div>
+
+  <div class="block">
+    <div class="ci-heading">Colors</div>
+    <div class="swatches">
+      <div class="sw" style="background:#141414"><span style="color:#fff">--ink 141414</span></div>
+      <div class="sw" style="background:#FFFFFF"><span>--paper FFFFFF</span></div>
+      <div class="sw" style="background:#F5F4F1"><span>--stone F5F4F1</span></div>
+      <div class="sw" style="background:#8B5E3C"><span style="color:#fff">--roast 8B5E3C</span></div>
+      <div class="sw" style="background:#6B6B6B"><span style="color:#fff">--grey 6B6B6B</span></div>
+      <div class="sw" style="background:#E3E1DC"><span>--mist E3E1DC</span></div>
+    </div>
+    <div class="spec">RULE: black + white carry the system · roast for one accent only · never more</div>
+  </div>
+
+</div>
+</body>
+</html>

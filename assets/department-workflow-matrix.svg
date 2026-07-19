@@ -1,0 +1,223 @@
+<svg viewBox="0 0 1240 1000" xmlns="http://www.w3.org/2000/svg" font-family="'Outfit','Prompt','Helvetica Neue',Arial,sans-serif">
+  <defs>
+    <marker id="fRoast" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#8B5E3C"/>
+    </marker>
+    <marker id="fInk" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#6B6B6B"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="1240" height="1000" fill="#FFFFFF"/>
+
+  <text x="30" y="34" font-size="17" font-weight="600" fill="#141414" letter-spacing="1.5">1:2 COFFEE — DEPARTMENT WORKFLOW MATRIX</text>
+  <text x="30" y="54" font-size="11" font-weight="300" fill="#6B6B6B">Four layers · six departments · one center of gravity</text>
+  <line x1="30" y1="64" x2="1210" y2="64" stroke="#141414" stroke-width="2"/>
+
+  <g font-family="'IBM Plex Mono',monospace" font-size="10.5" font-weight="600" fill="#141414" text-anchor="middle" letter-spacing="1">
+    <text x="182" y="88">01 · HR &amp; PEOPLE</text>
+    <text x="367" y="88">02 · BRANCH OPS</text>
+    <text x="552" y="88">03 · SUPPLY CHAIN</text>
+    <text x="737" y="88">04 · MAINTENANCE</text>
+    <text x="922" y="88">05 · ACCOUNTING</text>
+    <text x="1107" y="88">06 · MARKETING &amp; CX</text>
+  </g>
+
+  <g stroke="#C9C7C2" stroke-width="1" stroke-dasharray="3 5">
+    <line x1="275" y1="98" x2="275" y2="900"/>
+    <line x1="460" y1="98" x2="460" y2="900"/>
+    <line x1="645" y1="98" x2="645" y2="900"/>
+    <line x1="830" y1="98" x2="830" y2="900"/>
+    <line x1="1015" y1="98" x2="1015" y2="900"/>
+  </g>
+
+  <!-- ===== ANALYTICS ===== -->
+  <rect x="70" y="106" width="1150" height="150" fill="#F5F4F1"/>
+  <rect x="70" y="106" width="4" height="150" fill="#141414"/>
+  <text transform="rotate(-90 52 181)" x="52" y="181" font-family="'IBM Plex Mono',monospace" font-size="10" letter-spacing="2.5" fill="#6B6B6B" text-anchor="middle">ANALYTICS</text>
+
+  <rect x="90" y="116" width="1110" height="28" fill="#141414"/>
+  <text x="645" y="134" font-size="10.5" font-weight="600" fill="#FFFFFF" text-anchor="middle" letter-spacing="1.5">LEADERSHIP VIEW — WHAT IT MEANS · WHAT WE DO NEXT</text>
+
+  <g>
+    <rect x="99" y="156" width="166" height="86" fill="#FFFFFF" stroke="#141414" stroke-width="1"/>
+    <text x="182" y="186" font-size="10.5" font-weight="600" fill="#141414" text-anchor="middle">Turnover causes</text>
+    <text x="182" y="204" font-size="10" font-weight="300" fill="#6B6B6B" text-anchor="middle">hiring plan ahead</text>
+    <text x="182" y="220" font-size="10" font-weight="300" fill="#6B6B6B" text-anchor="middle">of openings</text>
+
+    <rect x="284" y="156" width="166" height="86" fill="#FFFFFF" stroke="#141414" stroke-width="1"/>
+    <text x="367" y="186" font-size="10.5" font-weight="600" fill="#141414" text-anchor="middle">Why branch X moved</text>
+    <text x="367" y="204" font-size="10" font-weight="300" fill="#6B6B6B" text-anchor="middle">actions for</text>
+    <text x="367" y="220" font-size="10" font-weight="300" fill="#6B6B6B" text-anchor="middle">area managers</text>
+
+    <rect x="469" y="156" width="166" height="86" fill="#FFFFFF" stroke="#141414" stroke-width="1"/>
+    <text x="552" y="186" font-size="10.5" font-weight="600" fill="#141414" text-anchor="middle">Next roast plan</text>
+    <text x="552" y="204" font-size="10" font-weight="300" fill="#6B6B6B" text-anchor="middle">6–10 t/month ·</text>
+    <text x="552" y="220" font-size="10" font-weight="300" fill="#6B6B6B" text-anchor="middle">vendor decisions</text>
+
+    <rect x="654" y="156" width="166" height="86" fill="#FFFFFF" stroke="#141414" stroke-width="1"/>
+    <text x="737" y="186" font-size="10.5" font-weight="600" fill="#141414" text-anchor="middle">Replace vs repair</text>
+    <text x="737" y="204" font-size="10" font-weight="300" fill="#6B6B6B" text-anchor="middle">equipment budget</text>
+    <text x="737" y="220" font-size="10" font-weight="300" fill="#6B6B6B" text-anchor="middle">planning</text>
+
+    <rect x="839" y="156" width="166" height="86" fill="#FFFFFF" stroke="#141414" stroke-width="1"/>
+    <text x="922" y="186" font-size="10.5" font-weight="600" fill="#141414" text-anchor="middle">Variance analysis</text>
+    <text x="922" y="204" font-size="10" font-weight="300" fill="#6B6B6B" text-anchor="middle">investor-ready,</text>
+    <text x="922" y="220" font-size="10" font-weight="300" fill="#6B6B6B" text-anchor="middle">verifiable story</text>
+
+    <rect x="1024" y="156" width="166" height="86" fill="#FFFFFF" stroke="#141414" stroke-width="1"/>
+    <text x="1107" y="186" font-size="10.5" font-weight="600" fill="#141414" text-anchor="middle">Next campaign</text>
+    <text x="1107" y="204" font-size="10" font-weight="300" fill="#6B6B6B" text-anchor="middle">menu decisions ·</text>
+    <text x="1107" y="220" font-size="10" font-weight="300" fill="#6B6B6B" text-anchor="middle">channel mix</text>
+  </g>
+
+  <!-- ===== PERFORMANCE ===== -->
+  <rect x="70" y="270" width="1150" height="122" fill="#F5F4F1"/>
+  <rect x="70" y="270" width="4" height="122" fill="#8B5E3C"/>
+  <text transform="rotate(-90 52 331)" x="52" y="331" font-family="'IBM Plex Mono',monospace" font-size="10" letter-spacing="2.5" fill="#8B5E3C" text-anchor="middle">PERFORMANCE</text>
+
+  <rect x="90" y="280" width="1110" height="26" fill="#8B5E3C"/>
+  <text x="645" y="297" font-size="10" font-weight="600" fill="#FFFFFF" text-anchor="middle" letter-spacing="1.5">HOURS UNLOADED PER PERSON — SAME TEAM · NEVER LESS RESPONSIBILITY</text>
+
+  <g font-family="'IBM Plex Mono',monospace" text-anchor="middle">
+    <rect x="99" y="318" width="166" height="58" fill="#FFFFFF" stroke="#8B5E3C" stroke-width="1.2"/>
+    <text x="182" y="341" font-size="9.5" font-weight="600" fill="#141414">CERT COVERAGE %</text>
+    <text x="182" y="360" font-size="9.5" fill="#6B6B6B">TIME-TO-STAFF</text>
+
+    <rect x="284" y="318" width="166" height="58" fill="#FFFFFF" stroke="#8B5E3C" stroke-width="1.2"/>
+    <text x="367" y="341" font-size="9.5" font-weight="600" fill="#141414">CUPS / HOUR</text>
+    <text x="367" y="360" font-size="9.5" fill="#6B6B6B">WASTE %</text>
+
+    <rect x="469" y="318" width="166" height="58" fill="#FFFFFF" stroke="#8B5E3C" stroke-width="1.2"/>
+    <text x="552" y="341" font-size="9.5" font-weight="600" fill="#141414">FORECAST ACCURACY</text>
+    <text x="552" y="360" font-size="9.5" fill="#6B6B6B">STOCKOUTS</text>
+
+    <rect x="654" y="318" width="166" height="58" fill="#FFFFFF" stroke="#8B5E3C" stroke-width="1.2"/>
+    <text x="737" y="341" font-size="9.5" font-weight="600" fill="#141414">UPTIME %</text>
+    <text x="737" y="360" font-size="9.5" fill="#6B6B6B">REPEAT FAULTS</text>
+
+    <rect x="839" y="318" width="166" height="58" fill="#FFFFFF" stroke="#8B5E3C" stroke-width="1.2"/>
+    <text x="922" y="341" font-size="9.5" font-weight="600" fill="#141414">DAYS TO CLOSE</text>
+    <text x="922" y="360" font-size="9.5" fill="#6B6B6B">UNRECONCILED ITEMS</text>
+
+    <rect x="1024" y="318" width="166" height="58" fill="#FFFFFF" stroke="#8B5E3C" stroke-width="1.2"/>
+    <text x="1107" y="341" font-size="9.5" font-weight="600" fill="#141414">SENTIMENT</text>
+    <text x="1107" y="360" font-size="9.5" fill="#6B6B6B">CAMPAIGN RESULTS</text>
+  </g>
+
+  <g stroke="#6B6B6B" stroke-width="1" stroke-dasharray="3 3">
+    <line x1="182" y1="314" x2="182" y2="252" marker-end="url(#fInk)"/>
+    <line x1="367" y1="314" x2="367" y2="252" marker-end="url(#fInk)"/>
+    <line x1="552" y1="314" x2="552" y2="252" marker-end="url(#fInk)"/>
+    <line x1="737" y1="314" x2="737" y2="252" marker-end="url(#fInk)"/>
+    <line x1="922" y1="314" x2="922" y2="252" marker-end="url(#fInk)"/>
+    <line x1="1107" y1="314" x2="1107" y2="252" marker-end="url(#fInk)"/>
+  </g>
+
+  <!-- ===== OPERATIONS ===== -->
+  <rect x="70" y="424" width="1150" height="306" fill="#F5F4F1"/>
+  <rect x="70" y="424" width="4" height="306" fill="#141414"/>
+  <text transform="rotate(-90 52 577)" x="52" y="577" font-family="'IBM Plex Mono',monospace" font-size="10" letter-spacing="2.5" fill="#6B6B6B" text-anchor="middle">OPERATIONS</text>
+
+  <!-- SALES hub at top of band, feeding the scoreboard above -->
+  <rect x="535" y="444" width="170" height="76" fill="#141414"/>
+  <text x="620" y="478" font-size="17" font-weight="600" fill="#FFFFFF" text-anchor="middle" letter-spacing="3">SALES</text>
+  <text x="620" y="500" font-size="9.5" font-weight="300" fill="#CFCFCF" text-anchor="middle">every branch · every day</text>
+
+  <line x1="620" y1="440" x2="620" y2="398" stroke="#8B5E3C" stroke-width="2" stroke-dasharray="4 3" marker-end="url(#fRoast)"/>
+
+  <rect x="1032" y="454" width="151" height="56" fill="#FFFFFF" stroke="#8B5E3C" stroke-width="2"/>
+  <text x="1107" y="478" font-size="11.5" font-weight="600" fill="#141414" text-anchor="middle">CUSTOMER</text>
+  <text x="1107" y="496" font-size="9" font-weight="300" fill="#6B6B6B" text-anchor="middle">office crowd · everyday</text>
+
+  <!-- dept ops boxes at bottom of band -->
+  <g>
+    <rect x="99" y="648" width="166" height="62" fill="#FFFFFF" stroke="#141414" stroke-width="1.5"/>
+    <text x="182" y="673" font-size="11.5" font-weight="600" fill="#141414" text-anchor="middle">People Ops</text>
+    <text x="182" y="692" font-size="9.5" font-weight="300" fill="#6B6B6B" text-anchor="middle">recruit · train · certify</text>
+
+    <rect x="284" y="648" width="166" height="62" fill="#FFFFFF" stroke="#141414" stroke-width="1.5"/>
+    <text x="367" y="673" font-size="11.5" font-weight="600" fill="#141414" text-anchor="middle">Branch Ops</text>
+    <text x="367" y="692" font-size="9.5" font-weight="300" fill="#6B6B6B" text-anchor="middle">open · brew · serve</text>
+
+    <rect x="469" y="648" width="166" height="62" fill="#FFFFFF" stroke="#141414" stroke-width="1.5"/>
+    <text x="552" y="673" font-size="11.5" font-weight="600" fill="#141414" text-anchor="middle">Supply Ops</text>
+    <text x="552" y="692" font-size="9.5" font-weight="300" fill="#6B6B6B" text-anchor="middle">roast · store · replenish</text>
+
+    <rect x="654" y="648" width="166" height="62" fill="#FFFFFF" stroke="#141414" stroke-width="1.5"/>
+    <text x="737" y="673" font-size="11.5" font-weight="600" fill="#141414" text-anchor="middle">Maintenance Ops</text>
+    <text x="737" y="692" font-size="9.5" font-weight="300" fill="#6B6B6B" text-anchor="middle">repair · preventive</text>
+
+    <rect x="839" y="648" width="166" height="62" fill="#FFFFFF" stroke="#141414" stroke-width="1.5"/>
+    <text x="922" y="673" font-size="11.5" font-weight="600" fill="#141414" text-anchor="middle">Finance Ops</text>
+    <text x="922" y="692" font-size="9.5" font-weight="300" fill="#6B6B6B" text-anchor="middle">reconcile · close · pay</text>
+
+    <rect x="1024" y="648" width="166" height="62" fill="#FFFFFF" stroke="#141414" stroke-width="1.5"/>
+    <text x="1107" y="673" font-size="11.5" font-weight="600" fill="#141414" text-anchor="middle">Marketing Ops</text>
+    <text x="1107" y="692" font-size="9.5" font-weight="300" fill="#6B6B6B" text-anchor="middle">campaigns · launches</text>
+  </g>
+
+  <!-- flows: departments rise into SALES -->
+  <g stroke="#8B5E3C" stroke-width="1.6" fill="none">
+    <path d="M 182 648 C 250 576, 420 536, 531 518" marker-end="url(#fRoast)"/>
+    <path d="M 367 648 C 420 606, 500 566, 570 526" marker-end="url(#fRoast)"/>
+    <path d="M 552 648 C 570 611, 595 576, 608 526" marker-end="url(#fRoast)"/>
+    <path d="M 737 648 C 715 611, 680 576, 650 526" marker-end="url(#fRoast)"/>
+    <path d="M 690 520 C 760 562, 840 601, 905 644" marker-end="url(#fRoast)"/>
+    <path d="M 1107 644 C 950 606, 800 556, 709 522" marker-end="url(#fRoast)"/>
+    <path d="M 705 482 L 1028 482" marker-end="url(#fRoast)"/>
+    <path d="M 1150 510 C 1165 556, 1160 601, 1140 644" marker-end="url(#fRoast)" stroke-dasharray="5 4"/>
+  </g>
+  <g font-family="'IBM Plex Mono',monospace" font-size="9" fill="#8B5E3C" letter-spacing="1">
+    <text transform="rotate(-17 340 578)" x="340" y="578" text-anchor="middle">TRAINED BARISTAS</text>
+    <text transform="rotate(-24 465 588)" x="465" y="588" text-anchor="middle">MENU · SERVICE</text>
+    <text transform="rotate(-58 586 592)" x="586" y="592" text-anchor="middle">STOCK</text>
+    <text transform="rotate(55 694 592)" x="694" y="592" text-anchor="middle">UPTIME</text>
+    <text transform="rotate(22 800 588)" x="800" y="584" text-anchor="middle">DAILY SETTLEMENTS</text>
+    <text transform="rotate(14 905 596)" x="905" y="590" text-anchor="middle">CAMPAIGNS · PROMOS</text>
+    <text x="866" y="474" text-anchor="middle">IN-STORE + ~50% DELIVERY</text>
+    <text transform="rotate(84 1168 578)" x="1168" y="578" text-anchor="middle">FEEDBACK</text>
+  </g>
+
+  <!-- ===== DATA ===== -->
+  <rect x="70" y="744" width="1150" height="156" fill="#F5F4F1"/>
+  <rect x="70" y="744" width="4" height="156" fill="#141414"/>
+  <text transform="rotate(-90 52 822)" x="52" y="822" font-family="'IBM Plex Mono',monospace" font-size="10" letter-spacing="2.5" fill="#6B6B6B" text-anchor="middle">DATA</text>
+
+  <g stroke="#6B6B6B" stroke-width="1" stroke-dasharray="3 3">
+    <line x1="182" y1="776" x2="182" y2="716" marker-end="url(#fInk)"/>
+    <line x1="367" y1="776" x2="367" y2="716" marker-end="url(#fInk)"/>
+    <line x1="552" y1="776" x2="552" y2="716" marker-end="url(#fInk)"/>
+    <line x1="737" y1="776" x2="737" y2="716" marker-end="url(#fInk)"/>
+    <line x1="922" y1="776" x2="922" y2="716" marker-end="url(#fInk)"/>
+    <line x1="1107" y1="776" x2="1107" y2="716" marker-end="url(#fInk)"/>
+  </g>
+
+  <g>
+    <rect x="107" y="788" width="150" height="30" fill="#FFFFFF" stroke="#141414" stroke-width="1.5"/>
+    <text x="182" y="807" font-size="10" font-weight="600" fill="#141414" text-anchor="middle">PEOPLE</text>
+
+    <rect x="292" y="782" width="150" height="30" fill="#FFFFFF" stroke="#141414" stroke-width="1.5"/>
+    <text x="367" y="801" font-size="10" font-weight="600" fill="#141414" text-anchor="middle">BRANCHES</text>
+    <rect x="292" y="822" width="150" height="30" fill="#FFFFFF" stroke="#141414" stroke-width="1.5"/>
+    <text x="367" y="841" font-size="10" font-weight="600" fill="#141414" text-anchor="middle">MENU / SKU</text>
+
+    <rect x="477" y="782" width="150" height="30" fill="#FFFFFF" stroke="#141414" stroke-width="1.5"/>
+    <text x="552" y="801" font-size="10" font-weight="600" fill="#141414" text-anchor="middle">VENDORS</text>
+    <rect x="477" y="822" width="150" height="30" fill="#FFFFFF" stroke="#141414" stroke-width="1.5"/>
+    <text x="552" y="841" font-size="10" font-weight="600" fill="#141414" text-anchor="middle">INVENTORY</text>
+
+    <rect x="662" y="788" width="150" height="30" fill="#FFFFFF" stroke="#141414" stroke-width="1.5"/>
+    <text x="737" y="807" font-size="10" font-weight="600" fill="#141414" text-anchor="middle">ASSETS</text>
+
+    <rect x="847" y="788" width="150" height="30" fill="#FFFFFF" stroke="#141414" stroke-width="1.5"/>
+    <text x="922" y="807" font-size="10" font-weight="600" fill="#141414" text-anchor="middle">ACCOUNTS / GL</text>
+
+    <rect x="1032" y="788" width="150" height="30" fill="#FFFFFF" stroke="#141414" stroke-width="1.5"/>
+    <text x="1107" y="807" font-size="10" font-weight="600" fill="#141414" text-anchor="middle">CUSTOMERS</text>
+  </g>
+
+  <text x="90" y="884" font-size="10" font-weight="300" fill="#6B6B6B">Data is what you own · Operations is what you do · Performance is what you measure · Analytics is what you decide.</text>
+
+  <text x="30" y="975" font-family="'IBM Plex Mono',monospace" font-size="9" fill="#6B6B6B" letter-spacing="1">FIG. 03 — DEPARTMENT WORKFLOW MATRIX · SALES RESULTS FLOW STRAIGHT UP INTO THE PERFORMANCE LAYER</text>
+</svg>

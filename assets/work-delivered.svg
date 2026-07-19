@@ -1,0 +1,78 @@
+<svg viewBox="0 0 860 480" xmlns="http://www.w3.org/2000/svg" font-family="'Helvetica Neue', Arial, sans-serif">
+  <defs>
+    <marker id="arrowLoop" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#8B5E3C"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="860" height="480" fill="#FFFFFF"/>
+
+  <text x="30" y="34" font-size="15" font-weight="800" fill="#141414" letter-spacing="2">WORK DELIVERED — WHAT 1:2 COFFEE RECEIVES EACH CYCLE</text>
+  <line x1="30" y1="46" x2="830" y2="46" stroke="#141414" stroke-width="2"/>
+  <text x="30" y="66" font-size="11" fill="#6B6B6B">Every workstream — per department, per phase — is delivered through the same repeatable cycle</text>
+
+  <!-- ============ BUILD deliverables (tangible) ============ -->
+  <rect x="20" y="84" width="820" height="166" fill="#F5F4F1"/>
+  <rect x="20" y="84" width="4" height="166" fill="#141414"/>
+  <text x="40" y="110" font-size="12" font-weight="800" fill="#141414" letter-spacing="1.5">BUILD — TANGIBLE ASSETS THAT STAY WITH THE COMPANY</text>
+
+  <rect x="40" y="124" width="190" height="110" fill="#141414"/>
+  <text x="135" y="150" font-size="12" font-weight="700" fill="#FFFFFF" text-anchor="middle" letter-spacing="0.5">WORKFLOWS</text>
+  <text x="135" y="172" font-size="10.5" fill="#CFCFCF" text-anchor="middle">Lark Base tables, approvals,</text>
+  <text x="135" y="188" font-size="10.5" fill="#CFCFCF" text-anchor="middle">tickets, checklists, forms —</text>
+  <text x="135" y="204" font-size="10.5" fill="#CFCFCF" text-anchor="middle">designed, built, documented</text>
+
+  <rect x="245" y="124" width="190" height="110" fill="#141414"/>
+  <text x="340" y="150" font-size="12" font-weight="700" fill="#FFFFFF" text-anchor="middle" letter-spacing="0.5">SKILLS</text>
+  <text x="340" y="172" font-size="10.5" fill="#CFCFCF" text-anchor="middle">Claude Cowork skills per</text>
+  <text x="340" y="188" font-size="10.5" fill="#CFCFCF" text-anchor="middle">department: close checklist,</text>
+  <text x="340" y="204" font-size="10.5" fill="#CFCFCF" text-anchor="middle">reports, briefs, branch Q&amp;A</text>
+
+  <rect x="450" y="124" width="190" height="110" fill="#141414"/>
+  <text x="545" y="150" font-size="12" font-weight="700" fill="#FFFFFF" text-anchor="middle" letter-spacing="0.5">SETTING UP</text>
+  <text x="545" y="172" font-size="10.5" fill="#CFCFCF" text-anchor="middle">Lark workspace &amp; permissions,</text>
+  <text x="545" y="188" font-size="10.5" fill="#CFCFCF" text-anchor="middle">Cowork accounts per dept,</text>
+  <text x="545" y="204" font-size="10.5" fill="#CFCFCF" text-anchor="middle">POS / TRCloud connections</text>
+
+  <rect x="655" y="124" width="165" height="110" fill="#FFFFFF" stroke="#141414" stroke-width="1.5"/>
+  <text x="737" y="150" font-size="12" font-weight="700" fill="#141414" text-anchor="middle" letter-spacing="0.5">DOCUMENTATION</text>
+  <text x="737" y="172" font-size="10.5" fill="#3A3A3A" text-anchor="middle">SOPs, guides, data</text>
+  <text x="737" y="188" font-size="10.5" fill="#3A3A3A" text-anchor="middle">dictionary — all owned</text>
+  <text x="737" y="204" font-size="10.5" fill="#3A3A3A" text-anchor="middle">by 1:2 Coffee</text>
+
+  <!-- ============ ENABLE deliverables (people-side, recurring) ============ -->
+  <rect x="20" y="274" width="820" height="166" fill="#F5F4F1"/>
+  <rect x="20" y="274" width="4" height="166" fill="#8B5E3C"/>
+  <text x="40" y="300" font-size="12" font-weight="800" fill="#141414" letter-spacing="1.5">ENABLE — PEOPLE-SIDE SERVICES, DELIVERED AS A RECURRING CYCLE</text>
+
+  <rect x="40" y="314" width="190" height="110" fill="#FFFFFF" stroke="#141414" stroke-width="1.5"/>
+  <text x="135" y="340" font-size="12" font-weight="700" fill="#141414" text-anchor="middle" letter-spacing="0.5">MEETINGS</text>
+  <text x="135" y="362" font-size="10.5" fill="#3A3A3A" text-anchor="middle">Kickoff &amp; design workshops,</text>
+  <text x="135" y="378" font-size="10.5" fill="#3A3A3A" text-anchor="middle">weekly working sessions,</text>
+  <text x="135" y="394" font-size="10.5" fill="#3A3A3A" text-anchor="middle">monthly steering review</text>
+
+  <rect x="245" y="314" width="190" height="110" fill="#FFFFFF" stroke="#141414" stroke-width="1.5"/>
+  <text x="340" y="340" font-size="12" font-weight="700" fill="#141414" text-anchor="middle" letter-spacing="0.5">TRAINING</text>
+  <text x="340" y="362" font-size="10.5" fill="#3A3A3A" text-anchor="middle">Hands-on sessions in Thai,</text>
+  <text x="340" y="378" font-size="10.5" fill="#3A3A3A" text-anchor="middle">quick guides in Lark, AI</text>
+  <text x="340" y="394" font-size="10.5" fill="#3A3A3A" text-anchor="middle">supervisors certified per dept</text>
+
+  <rect x="450" y="314" width="190" height="110" fill="#FFFFFF" stroke="#141414" stroke-width="1.5"/>
+  <text x="545" y="340" font-size="12" font-weight="700" fill="#141414" text-anchor="middle" letter-spacing="0.5">FOLLOWING UP</text>
+  <text x="545" y="362" font-size="10.5" fill="#3A3A3A" text-anchor="middle">Adoption checks, fixes &amp;</text>
+  <text x="545" y="378" font-size="10.5" fill="#3A3A3A" text-anchor="middle">improvements, usage reports,</text>
+  <text x="545" y="394" font-size="10.5" fill="#3A3A3A" text-anchor="middle">handover &amp; ongoing support</text>
+
+  <rect x="655" y="314" width="165" height="110" fill="#8B5E3C"/>
+  <text x="737" y="340" font-size="12" font-weight="700" fill="#FFFFFF" text-anchor="middle" letter-spacing="0.5">MEASURE</text>
+  <text x="737" y="362" font-size="10.5" fill="#F3E7DC" text-anchor="middle">Before/after metrics per</text>
+  <text x="737" y="378" font-size="10.5" fill="#F3E7DC" text-anchor="middle">workflow — hours unloaded,</text>
+  <text x="737" y="394" font-size="10.5" fill="#F3E7DC" text-anchor="middle">adoption, accuracy</text>
+
+  <!-- cycle arrows -->
+  <path d="M 830 204 C 852 224, 852 252, 830 272" fill="none" stroke="#8B5E3C" stroke-width="2" marker-end="url(#arrowLoop)"/>
+  <path d="M 30 272 C 8 252, 8 224, 30 204" fill="none" stroke="#8B5E3C" stroke-width="2" marker-end="url(#arrowLoop)"/>
+  <text x="430" y="266" font-size="10" font-style="italic" fill="#8B5E3C" text-anchor="middle">build → enable → measure → improve → next workflow</text>
+
+  <text x="30" y="466" font-size="10" fill="#6B6B6B">Goal: same team, less redundant workload — never less responsibility. Measured in hours unloaded per person.</text>
+</svg>
