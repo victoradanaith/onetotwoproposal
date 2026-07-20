@@ -94,6 +94,17 @@
   .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
   .reveal.in{opacity:1;transform:none}
   @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+  @media print{
+    .lang-toggle,#lb{display:none!important}
+    header{position:static;border-bottom:2px solid #141414}
+    .reveal{opacity:1!important;transform:none!important;transition:none!important}
+    .part-head{page-break-before:always;padding-top:20px}
+    .hero{padding-top:30px}
+    .dept,.photo,.diagram,.receipt,.m-step,.needs{page-break-inside:avoid}
+    .hero-img img{height:300px}
+    a{color:inherit;text-decoration:none}
+  }
 </style>
 </head>
 <body>
@@ -112,12 +123,11 @@
 <div class="hero">
   <div class="wrap">
     <div class="eyebrow"><span class="en">One To Two Coffee Company — Digital Transformation Proposal · July 2026</span><span class="th">One To Two Coffee Company — ข้อเสนอโครงการ Digital Transformation · กรกฎาคม 2569</span></div>
-    <div class="ratio">1<span class="colon">:</span>2</div>
     <h1><span class="en">From everyday coffee to everyday intelligence. Two and a half times the branches — the same team.</span><span class="th">จากกาแฟทุกวัน สู่ความฉลาดในทุกวันทำงาน — สาขาเพิ่มขึ้น 2.5 เท่า ด้วยทีมเท่าเดิม</span></h1>
-    <p><span class="en">A three-part proposal: the vision, the department-by-department build, and the accounting automation already running today — on Lark, TRCloud, Thanvasu POS, and Claude AI.</span><span class="th">ข้อเสนอ 3 ส่วน: วิสัยทัศน์ · การพัฒนารายแผนก · และระบบบัญชีอัตโนมัติที่กำลังทดสอบจริงอยู่วันนี้ — บน Lark, TRCloud, Thanvasu POS และ Claude AI</span></p>
+    <p><span class="en">A three-part proposal: the vision, the department-by-department build, and the accounting automation already running today — on the operational hub platform, the accounting system, the POS system, and Claude AI.</span><span class="th">ข้อเสนอ 3 ส่วน: วิสัยทัศน์ · การพัฒนารายแผนก · และระบบบัญชีอัตโนมัติที่กำลังทดสอบจริงอยู่วันนี้ — บนแพลตฟอร์มศูนย์กลางปฏิบัติการ ระบบบัญชี ระบบ POS และ Claude AI</span></p>
   </div>
   <div class="hero-img">
-    <img src="https://raw.githubusercontent.com/victoradanaith/onetotwoproposal/refs/heads/main/images/485002262_3112464482239779_4221370885806574180_n.jpg" alt="1:2 Coffee branch">
+    <img src="https://raw.githubusercontent.com/victoradanaith/onetotwoproposal/refs/heads/main/images/481451191_3094235447396016_1761074796590817486_n.jpg" alt="1:2 Coffee — logo wall">
   </div>
 </div>
 
@@ -141,7 +151,7 @@
   <div class="wrap">
     <div class="sec-label"><span class="sec-num">1:2</span><h3><span class="en">Four-Layer Architecture</span><span class="th">สถาปัตยกรรม 4 ชั้น</span></h3></div>
     <p class="lede"><span class="en">Four layers, three systems of truth, one AI capability across everything.</span><span class="th">สี่ชั้น สามระบบความจริง หนึ่งความสามารถ AI ครอบคลุมทั้งหมด</span></p>
-    <p class="body"><span class="en">Thanvasu POS owns sales truth. TRCloud owns financial truth. Lark is the operational hub where every department works daily. Beneath them, a cleaned data foundation with one master ID per branch, vendor, product, and person; above them, a performance layer measuring every department — including hours unloaded — and the analytics that turn numbers into decisions.</span><span class="th">Thanvasu POS คือความจริงด้านยอดขาย TRCloud คือความจริงด้านการเงิน Lark คือศูนย์กลางปฏิบัติการที่ทุกแผนกใช้ทำงานทุกวัน ด้านล่างคือฐานข้อมูลที่ทำความสะอาดแล้ว — หนึ่งรหัสหลักต่อหนึ่งสาขา คู่ค้า สินค้า และพนักงาน ด้านบนคือชั้นวัดผลงานของทุกแผนก รวมถึงชั่วโมงงานที่ปลดออก และชั้นวิเคราะห์ที่เปลี่ยนตัวเลขเป็นการตัดสินใจ</span></p>
+    <p class="body"><span class="en">The POS system owns sales truth. The accounting system owns financial truth. An operational hub platform is where every department works daily. Beneath them, a cleaned data foundation with one master ID per branch, vendor, product, and person; above them, a performance layer measuring every department — including hours unloaded — and the analytics that turn numbers into decisions.</span><span class="th">ระบบ POS คือความจริงด้านยอดขาย ระบบบัญชีคือความจริงด้านการเงิน แพลตฟอร์มศูนย์กลางปฏิบัติการคือที่ที่ทุกแผนกใช้ทำงานทุกวัน ด้านล่างคือฐานข้อมูลที่ทำความสะอาดแล้ว — หนึ่งรหัสหลักต่อหนึ่งสาขา คู่ค้า สินค้า และพนักงาน ด้านบนคือชั้นวัดผลงานของทุกแผนก รวมถึงชั่วโมงงานที่ปลดออก และชั้นวิเคราะห์ที่เปลี่ยนตัวเลขเป็นการตัดสินใจ</span></p>
     <div class="diagram"><img src="assets/architecture.svg" alt="Four-layer architecture"></div>
     <div class="caption"><span class="en">FIG. 01 — SYSTEM ARCHITECTURE · DATA → PROCESSING → PERFORMANCE → ANALYTICS · CLICK TO ENLARGE</span><span class="th">ภาพที่ 01 — สถาปัตยกรรมระบบ · ข้อมูล → ประมวลผล → ผลงาน → วิเคราะห์ · คลิกเพื่อขยาย</span></div>
   </div>
@@ -149,10 +159,10 @@
 
 <section class="reveal">
   <div class="wrap">
-    <div class="sec-label"><span class="sec-num">1:3</span><h3><span class="en">The Brand We Build For</span><span class="th">แบรนด์ที่เราสร้างระบบให้</span></h3></div>
-    <p class="body"><span class="en">Founded in Chiang Rai, named for the extraction ratio, grown in Bangkok on the Everyday Coffee promise — quality at a price the office crowd can drink daily. Volume economics (100–120 cups per hour at peak), nearly half of sales via delivery, an investor model with 100% central control, and their own roastery moving 6–10 tons a month. Every one of those facts shapes the system we build.</span><span class="th">ก่อตั้งที่เชียงราย ตั้งชื่อตามอัตราส่วนการสกัดกาแฟ เติบโตในกรุงเทพฯ ด้วยแนวคิด Everyday Coffee — คุณภาพดีในราคาที่คนออฟฟิศดื่มได้ทุกวัน ธุรกิจแบบเน้นปริมาณ (100–120 แก้วต่อชั่วโมงช่วงพีค) ยอดขายเกือบครึ่งมาจากเดลิเวอรี โมเดลนักลงทุนที่แบรนด์ถือสิทธิ์บริหาร 100% และโรงคั่วของตัวเองที่ใช้กาแฟ 6–10 ตันต่อเดือน — ทุกข้อเท็จจริงเหล่านี้กำหนดรูปแบบระบบที่เราสร้าง</span></p>
+    <div class="sec-label"><span class="sec-num">1:3</span><h3><span class="en">What We Understand About 1:2</span><span class="th">สิ่งที่เราเข้าใจเกี่ยวกับ 1:2</span></h3></div>
+    <p class="body"><span class="en"><strong>Premium Mass</strong> is the founders’ own strategic vocabulary: real quality at a price the office crowd pays daily without thinking — coffee benchmarked against the everyday kaprao lunch plate. The craft runs on volume: 100–120 cups per hour at peak, five grinders offering dark to light roasts without ever pushing specialty on anyone — a gateway, not a lecture. Stores are deliberately functional: bars designed for the easiest workflow and easiest cleaning, to unload work from staff — the same philosophy our program applies to the back office. Nearly half of sales arrive through delivery. And an investor model with 100% central management control, plus their own roastery, means every system we build applies to every branch instantly.</span><span class="th"><strong>Premium Mass</strong> คือคำที่ผู้ก่อตั้งใช้เอง: คุณภาพจริงในราคาที่คนออฟฟิศจ่ายได้ทุกวันโดยไม่ต้องคิด — ตั้งราคาเทียบกับข้าวกะเพราจานประจำวัน งานคราฟต์นี้เดินด้วยปริมาณ: 100–120 แก้วต่อชั่วโมงช่วงพีค เครื่องบด 5 ตัวให้เลือกตั้งแต่คั่วเข้มถึงคั่วอ่อน โดยไม่ยัดเยียด specialty ให้ใคร — เป็นประตูเชื่อม ไม่ใช่การสั่งสอน ร้านออกแบบเน้นฟังก์ชัน: บาร์ที่ทำงานง่าย ทำความสะอาดง่าย เพื่อลดภาระพนักงาน — ปรัชญาเดียวกับที่โปรแกรมของเราใช้กับงานหลังบ้าน ยอดขายเกือบครึ่งมาจากเดลิเวอรี และโมเดลนักลงทุนที่แบรนด์ถือสิทธิ์บริหาร 100% พร้อมโรงคั่วของตัวเอง หมายความว่าทุกระบบที่เราสร้างใช้ได้กับทุกสาขาทันที</span></p>
     <div class="photos">
-      <figure class="photo"><img src="https://raw.githubusercontent.com/victoradanaith/onetotwoproposal/refs/heads/main/images/480310823_3080614995424728_8837653117018835200_n.jpg" alt="Branch storefront"></figure>
+      <figure class="photo"><img src="https://raw.githubusercontent.com/victoradanaith/onetotwoproposal/refs/heads/main/images/485002262_3112464482239779_4221370885806574180_n.jpg" alt="Branch storefront"></figure>
       <figure class="photo"><img src="https://raw.githubusercontent.com/victoradanaith/onetotwoproposal/refs/heads/main/images/492342765_1216233950507902_2964944600938526709_n.jpg" alt="Barista at work"></figure>
       <figure class="photo"><img src="https://raw.githubusercontent.com/victoradanaith/onetotwoproposal/refs/heads/main/images/493637694_1218375896960374_7424868030581193144_n.jpg" alt="1:2 coffee cups"></figure>
     </div>
@@ -203,7 +213,7 @@
           <li><span class="mid">M9</span><span><span class="en">Payroll posting integration</span><span class="th">เชื่อมการบันทึกเงินเดือน</span></span></li>
           <li><span class="mid">M10</span><span><span class="en">Budget vs actual per branch</span><span class="th">งบประมาณเทียบจริงรายสาขา</span></span></li>
           <li><span class="mid">M11</span><span><span class="en">Investor &amp; bank reporting pack</span><span class="th">ชุดรายงานนักลงทุน &amp; ธนาคาร</span></span></li>
-          <li><span class="mid">M12</span><span><span class="en">Month-end close checklist (from Excel to Lark)</span><span class="th">เช็กลิสต์ปิดงบ (จาก Excel สู่ Lark)</span></span></li>
+          <li><span class="mid">M12</span><span><span class="en">Month-end close checklist (from spreadsheets to the hub platform)</span><span class="th">เช็กลิสต์ปิดงบ (จาก Excel สู่แพลตฟอร์มศูนย์กลาง)</span></span></li>
         </ul>
         <div class="note"><a href="current-work.html"><span class="en">M1–M5 STATUS → CURRENT WORK</span><span class="th">สถานะ M1–M5 → งานปัจจุบัน</span></a></div>
       </div>

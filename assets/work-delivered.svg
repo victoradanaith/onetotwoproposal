@@ -18,7 +18,7 @@
 
   <rect x="40" y="124" width="190" height="110" fill="#141414"/>
   <text x="135" y="150" font-size="12" font-weight="700" fill="#FFFFFF" text-anchor="middle" letter-spacing="0.5">WORKFLOWS</text>
-  <text x="135" y="172" font-size="10.5" fill="#CFCFCF" text-anchor="middle">Lark Base tables, approvals,</text>
+  <text x="135" y="172" font-size="10.5" fill="#CFCFCF" text-anchor="middle">Hub-platform tables, approvals,</text>
   <text x="135" y="188" font-size="10.5" fill="#CFCFCF" text-anchor="middle">tickets, checklists, forms —</text>
   <text x="135" y="204" font-size="10.5" fill="#CFCFCF" text-anchor="middle">designed, built, documented</text>
 
@@ -30,9 +30,9 @@
 
   <rect x="450" y="124" width="190" height="110" fill="#141414"/>
   <text x="545" y="150" font-size="12" font-weight="700" fill="#FFFFFF" text-anchor="middle" letter-spacing="0.5">SETTING UP</text>
-  <text x="545" y="172" font-size="10.5" fill="#CFCFCF" text-anchor="middle">Lark workspace &amp; permissions,</text>
+  <text x="545" y="172" font-size="10.5" fill="#CFCFCF" text-anchor="middle">Hub workspace &amp; permissions,</text>
   <text x="545" y="188" font-size="10.5" fill="#CFCFCF" text-anchor="middle">Cowork accounts per dept,</text>
-  <text x="545" y="204" font-size="10.5" fill="#CFCFCF" text-anchor="middle">POS / TRCloud connections</text>
+  <text x="545" y="204" font-size="10.5" fill="#CFCFCF" text-anchor="middle">POS / accounting connections</text>
 
   <rect x="655" y="124" width="165" height="110" fill="#FFFFFF" stroke="#141414" stroke-width="1.5"/>
   <text x="737" y="150" font-size="12" font-weight="700" fill="#141414" text-anchor="middle" letter-spacing="0.5">DOCUMENTATION</text>
@@ -54,7 +54,7 @@
   <rect x="245" y="314" width="190" height="110" fill="#FFFFFF" stroke="#141414" stroke-width="1.5"/>
   <text x="340" y="340" font-size="12" font-weight="700" fill="#141414" text-anchor="middle" letter-spacing="0.5">TRAINING</text>
   <text x="340" y="362" font-size="10.5" fill="#3A3A3A" text-anchor="middle">Hands-on sessions in Thai,</text>
-  <text x="340" y="378" font-size="10.5" fill="#3A3A3A" text-anchor="middle">quick guides in Lark, AI</text>
+  <text x="340" y="378" font-size="10.5" fill="#3A3A3A" text-anchor="middle">quick guides in the hub, AI</text>
   <text x="340" y="394" font-size="10.5" fill="#3A3A3A" text-anchor="middle">supervisors certified per dept</text>
 
   <rect x="450" y="314" width="190" height="110" fill="#FFFFFF" stroke="#141414" stroke-width="1.5"/>
