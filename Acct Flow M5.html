@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Vendor Loop — COGS (M5)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Prompt:wght@300;400;500;600&family=IBM+Plex+Mono:wght@600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.9.1/mermaid.min.js"></script>
+<style>
+  :root{
+    --ink:#141414;
+    --paper:#FFFFFF;
+    --stone:#F5F4F1;
+    --roast:#8B5E3C;
+    --grey:#6B6B6B;
+    --mist:#E3E1DC;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    padding:48px 32px 96px;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Outfit',sans-serif;
+    font-weight:300;
+  }
+  [lang="th"], .th{
+    font-family:'Prompt',sans-serif;
+  }
+  header{
+    max-width:1300px;
+    margin:0 auto 40px;
+  }
+  .label{
+    font-family:'IBM Plex Mono',monospace;
+    font-weight:600;
+    font-size:13px;
+    letter-spacing:0.15em;
+    color:var(--roast);
+    text-transform:uppercase;
+    margin:0 0 14px;
+  }
+  .label .th{
+    font-family:'IBM Plex Mono',monospace;
+    letter-spacing:0.05em;
+    text-transform:none;
+  }
+  h1{
+    font-size:28px;
+    font-weight:600;
+    margin:0 0 6px;
+    letter-spacing:0.2px;
+  }
+  header p{
+    color:var(--grey);
+    font-size:16px;
+    font-weight:300;
+    line-height:1.7;
+    margin:0 0 4px;
+  }
+  header p[lang="th"]{
+    line-height:1.85;
+  }
+  header p:last-child{ margin:0; }
+  h1 .th{
+    display:block;
+    font-size:18px;
+    font-weight:500;
+    color:var(--grey);
+    margin-top:4px;
+  }
+  section{
+    max-width:1300px;
+    margin:0 auto;
+  }
+  .diagram-box{
+    background:var(--stone);
+    border:1px solid var(--mist);
+    border-radius:14px;
+    padding:44px;
+    display:flex;
+    justify-content:center;
+    overflow-x:auto;
+  }
+  .mermaid{
+    font-family:'Outfit',sans-serif !important;
+    width:100%;
+  }
+  .mermaid svg{
+    width:100% !important;
+    max-width:none !important;
+    height:auto !important;
+    min-width:1100px;
+  }
+  .section-gap{
+    margin-top:56px;
+  }
+  h2{
+    font-size:24px;
+    font-weight:600;
+    margin:0 0 4px;
+  }
+  h2 .th{
+    display:block;
+    font-weight:500;
+    font-size:17px;
+    color:var(--grey);
+    margin-top:4px;
+  }
+  .subtitle{
+    color:var(--grey);
+    font-size:16px;
+    font-weight:300;
+    line-height:1.7;
+    margin:0 0 4px;
+  }
+  .subtitle[lang="th"]{
+    line-height:1.85;
+    margin:0 0 20px;
+  }
+  .explain-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:24px;
+    margin-top:24px;
+  }
+  @media (max-width:900px){
+    .explain-grid{ grid-template-columns:1fr; }
+  }
+  .explain-grid.single{
+    grid-template-columns:1fr;
+  }
+  .explain-grid.single .explain-card{
+    max-width:800px;
+  }
+  .explain-card{
+    background:var(--paper);
+    border:1px solid var(--mist);
+    border-radius:14px;
+    padding:24px 28px;
+  }
+  .explain-card h3{
+    font-size:15px;
+    font-weight:600;
+    margin:0 0 4px;
+    color:var(--roast);
+  }
+  .explain-card p.lang-tag{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11px;
+    font-weight:600;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    color:var(--grey);
+    margin:0 0 14px;
+  }
+  .explain-card ul{
+    margin:0;
+    padding-left:18px;
+  }
+  .explain-card li{
+    font-size:14px;
+    font-weight:300;
+    line-height:1.85;
+    margin-bottom:10px;
+    color:var(--ink);
+  }
+  .explain-card li:last-child{ margin-bottom:0; }
+  .explain-card b{ font-weight:600; }
+  .callout{
+    margin-top:24px;
+    background:var(--stone);
+    border:1px solid var(--mist);
+    border-left:4px solid var(--roast);
+    border-radius:0 10px 10px 0;
+    padding:16px 20px;
+    font-size:14px;
+    font-weight:300;
+    line-height:1.7;
+  }
+  .callout[lang="th"]{
+    line-height:1.85;
+  }
+  .callout b{ color:var(--roast); font-weight:600; }
+</style>
+</head>
+<body>
+
+<header>
+  <p class="label">Diagram — M5 <span class="th" lang="th">แผนภาพ — M5</span></p>
+  <h1>VENDOR LOOP — COGS<span class="th" lang="th">วงจรผู้ขาย — ต้นทุนขาย</span></h1>
+  <p lang="en">COGS vendor payments: PO through GR-matched invoice to payment, funded from the cash pool. Open this file directly in a browser — it renders live, no external tool needed.</p>
+  <p lang="th">รายจ่ายผู้ขายต้นทุนขาย: จากใบสั่งซื้อ ผ่านการกระทบยอดใบรับสินค้ากับใบแจ้งหนี้ ไปจนถึงการจ่ายเงิน โดยจ่ายจากบัญชีเงินสดกลาง เปิดไฟล์นี้ในเบราว์เซอร์ได้โดยตรง แสดงผลได้ทันทีโดยไม่ต้องใช้เครื่องมือภายนอก</p>
+</header>
+
+<section>
+  <div class="diagram-box">
+    <pre class="mermaid">
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'Outfit, sans-serif','fontSize':'15px','primaryColor':'#F5F4F1','primaryTextColor':'#141414','primaryBorderColor':'#141414','lineColor':'#141414','background':'#FFFFFF'}}}%%
+flowchart LR
+    Pool(("Cash<br/><span style='font-family:Prompt,sans-serif'>บัญชีเงินสด</span>"))
+
+    subgraph VPO["VENDOR LOOP — COGS — M5 / <span style='font-family:Prompt,sans-serif'>วงจรผู้ขาย — ต้นทุนขาย</span>"]
+        direction LR
+        PO["PO<br/><span style='font-family:Prompt,sans-serif'>ใบสั่งซื้อ</span>"] --> MPO["MPO<br/><span style='font-family:Prompt,sans-serif'>ใบสั่งซื้อบางส่วน</span>"] --> GR["GR<br/><span style='font-family:Prompt,sans-serif'>ใบรับสินค้า</span>"] --> Inv1["Invoice<br/><span style='font-family:Prompt,sans-serif'>ใบแจ้งหนี้</span>"] --> AP1["AP<br/><span style='font-family:Prompt,sans-serif'>ใบตั้งหนี้</span>"] --> PayAppr1["Payment Approval<br/><span style='font-family:Prompt,sans-serif'>อนุมัติการจ่ายเงิน</span>"]
+        PayAppr1 --> WHT1["WHT Certificate<br/><span style='font-family:Prompt,sans-serif'>หนังสือรับรองหักภาษี</span>"]
+        PayAppr1 --> Pay1["Payment<br/><span style='font-family:Prompt,sans-serif'>การจ่ายเงิน</span>"]
+    end
+    COGSVendor["COGS Vendor<br/><span style='font-family:Prompt,sans-serif'>ผู้ขาย (ต้นทุนขาย)</span>"]
+
+    Pool -.funds.-> Pay1
+    WHT1 --> COGSVendor
+    Pay1 ==>|" "| COGSVendor
+
+    classDef pool fill:#8B5E3C,stroke:#8B5E3C,stroke-width:1px,color:#FFFFFF
+    classDef vpoNode fill:#FFFFFF,stroke:#141414,stroke-width:1.5px,stroke-dasharray: 5 3,color:#141414
+    classDef vpoEmph fill:#FFFFFF,stroke:#141414,stroke-width:4px,stroke-dasharray: 5 3,color:#141414
+
+    class Pool pool
+    class PO,MPO,GR,Inv1,AP1,PayAppr1,WHT1,Pay1 vpoNode
+    class COGSVendor vpoEmph
+    </pre>
+  </div>
+</section>
+
+<section class="section-gap">
+  <h2>PO → MPO → GR → INVOICE — MATCHING DETAIL<span class="th" lang="th">PO → MPO → GR → ใบแจ้งหนี้ — รายละเอียดการกระทบยอด</span></h2>
+  <p class="subtitle" lang="en">Proposed fix: insert a Goods Receipt (GR) step to create two independent match points, instead of one fragile MPO → AP link.</p>
+  <p class="subtitle" lang="th">แนวทางแก้ไข: แทรกขั้นตอนใบรับสินค้า (GR) เพื่อสร้างจุดจับคู่ที่เป็นอิสระ 2 จุด แทนการเชื่อมโยง MPO → AP เพียงจุดเดียวที่เปราะบาง</p>
+
+  <div class="diagram-box">
+    <pre class="mermaid">
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'Outfit, sans-serif','fontSize':'15px','primaryColor':'#F5F4F1','primaryTextColor':'#141414','primaryBorderColor':'#141414','lineColor':'#141414','background':'#FFFFFF'}}}%%
+flowchart LR
+    POMPO["PO / MPO<br/>Ordered qty &amp; price<br/><span style='font-family:Prompt,sans-serif'>สั่งซื้อ (ปริมาณ/ราคา)</span>"] -->|"MATCH 1<br/>qty &amp; price<br/><span style='font-family:Prompt,sans-serif'>ปริมาณ/ราคา</span>"| GR["GR<br/>Confirmed receipt<br/><span style='font-family:Prompt,sans-serif'>ยืนยันรับสินค้า</span>"]
+    GR -->|"MATCH 2<br/>qty &amp; price<br/><span style='font-family:Prompt,sans-serif'>ปริมาณ/ราคา</span>"| Invoice["Invoice<br/>Billed qty &amp; price<br/><span style='font-family:Prompt,sans-serif'>เรียกเก็บ (ปริมาณ/ราคา)</span>"]
+    GR -.->|"accrue<br/><span style='font-family:Prompt,sans-serif'>ตั้งหนี้ค้าง</span>"| GRNI["GRNI Accrual<br/>Liability recognized<br/><span style='font-family:Prompt,sans-serif'>ตั้งหนี้ค้างรับ</span>"]
+    Invoice --> Payment["Payment<br/>Settles AP<br/><span style='font-family:Prompt,sans-serif'>ชำระหนี้</span>"]
+
+    classDef doc fill:#FFFFFF,stroke:#141414,stroke-width:1.5px,stroke-dasharray: 5 3,color:#141414
+    classDef accrual fill:#E3E1DC,stroke:#141414,stroke-width:1.5px,stroke-dasharray: 1 3,color:#141414
+    classDef pay fill:#8B5E3C,stroke:#8B5E3C,stroke-width:1px,color:#FFFFFF
+
+    class POMPO,GR,Invoice doc
+    class GRNI accrual
+    class Payment pay
+    </pre>
+  </div>
+
+  <div class="explain-grid single">
+    <div class="explain-card" lang="th">
+      <p class="lang-tag">ภาษาไทย</p>
+      <h3>ทำไมต้องแยกขั้นตอน GR ออกมา</h3>
+      <ul>
+        <li>ปัจจุบัน <b>MPO</b> ทำหน้าที่ 2 อย่างพร้อมกัน คือเป็นหลักฐานการรับของจริง และเป็นตัวกระตุ้นให้ตั้งหนี้ (AP) เมื่อ AP ถูกคีย์แบบ standalone แทนที่จะแปลงมาจาก MPO ตัว MPO จะไม่มีทางรู้เลยว่าถูกจ่ายไปแล้ว จึงค้างเปิดอยู่แบบนั้นตลอด</li>
+        <li>การมี <b>GR (ใบรับสินค้า)</b> เป็นเอกสารแยกต่างหาก จะแยก "ของมาส่งแล้วหรือยัง" ออกจาก "เรียกเก็บเงินแล้วหรือยัง" ทำให้แต่ละฝั่งกลายเป็นการเปรียบเทียบที่เป็นอิสระและตรวจสอบย้อนหลังได้</li>
+        <li><b>Match 1 — PO/MPO vs GR:</b> เทียบปริมาณและราคาที่สั่งซื้อ กับปริมาณและราคาที่รับจริง เป็นการตรวจสอบด้านสินค้าคงเหลือล้วนๆ ยังไม่มีภาระหนี้สิน ถ้าไม่ตรงกัน = ปัญหาฝั่งจัดซื้อหรือคลังสินค้า (ส่งของขาด/เกิน ราคาไม่อัปเดต)</li>
+        <li><b>Match 2 — GR vs Invoice:</b> เทียบปริมาณและราคาที่รับจริง กับปริมาณและราคาที่เรียกเก็บ นี่คือจุดที่ตั้งหนี้จริง ถ้าไม่ตรงกัน = ปัญหาฝั่งการวางบิล (เรียกเก็บเกิน, VAT ไม่ตรง, ราคาผิด)</li>
+        <li><b>ใบตั้งหนี้ (AP) ควรถูกสร้างจากการแปลงมาจาก GR ที่ยืนยันแล้วเท่านั้น</b> ห้ามสร้างตรงจาก MPO อีกต่อไป — กฎนี้คือสิ่งที่ป้องกันปัญหา MPO ค้างไม่ให้เกิดซ้ำในเชิงโครงสร้าง</li>
+        <li>รายการ <b>GRNI (รับของแล้วแต่ยังไม่ได้ตั้งหนี้)</b> จะถูกบันทึกที่ขั้นตอน GR แทน — คือจุดที่ยืนยันว่ารับของแล้วแต่ยังไม่ได้รับใบแจ้งหนี้จาก vendor แทนที่ตรรกะภาระหนี้ที่เคยผูกกับ MPO แบบเดิม</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout" lang="th">
+    <b>หมายเหตุการนำไปใช้:</b> หาก TRCLOUD ไม่สามารถรองรับ GR เป็นเอกสารอิสระได้ การกระทบยอดนี้สามารถทำนอกระบบ ERP ได้ เช่น สร้าง Lark Base แยกต่างหาก ที่มีตาราง PO/MPO, GR และ Invoice เชื่อมโยงกัน โดยกำหนดให้ Invoice เชื่อมโยงได้เฉพาะกับ GR เท่านั้น ห้ามเชื่อมตรงกับ MPO
+  </div>
+</section>
+
+<script>
+  mermaid.initialize({ startOnLoad: true, theme: 'base', securityLevel: 'loose' });
+</script>
+
+</body>
+</html>

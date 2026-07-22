@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Vendor Loop — Recurring (M1)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Prompt:wght@300;400;500;600&family=IBM+Plex+Mono:wght@600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.9.1/mermaid.min.js"></script>
+<style>
+  :root{
+    --ink:#141414;
+    --paper:#FFFFFF;
+    --stone:#F5F4F1;
+    --roast:#8B5E3C;
+    --grey:#6B6B6B;
+    --mist:#E3E1DC;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    padding:48px 32px 96px;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Outfit',sans-serif;
+    font-weight:300;
+  }
+  [lang="th"], .th{
+    font-family:'Prompt',sans-serif;
+  }
+  header{
+    max-width:1300px;
+    margin:0 auto 40px;
+  }
+  .label{
+    font-family:'IBM Plex Mono',monospace;
+    font-weight:600;
+    font-size:13px;
+    letter-spacing:0.15em;
+    color:var(--roast);
+    text-transform:uppercase;
+    margin:0 0 14px;
+  }
+  .label .th{
+    font-family:'IBM Plex Mono',monospace;
+    letter-spacing:0.05em;
+    text-transform:none;
+  }
+  h1{
+    font-size:28px;
+    font-weight:600;
+    margin:0 0 6px;
+    letter-spacing:0.2px;
+  }
+  header p{
+    color:var(--grey);
+    font-size:16px;
+    font-weight:300;
+    line-height:1.7;
+    margin:0 0 4px;
+  }
+  header p[lang="th"]{
+    line-height:1.85;
+  }
+  header p:last-child{ margin:0; }
+  h1 .th{
+    display:block;
+    font-size:18px;
+    font-weight:500;
+    color:var(--grey);
+    margin-top:4px;
+  }
+  section{
+    max-width:1300px;
+    margin:0 auto;
+  }
+  .diagram-box{
+    background:var(--stone);
+    border:1px solid var(--mist);
+    border-radius:14px;
+    padding:44px;
+    display:flex;
+    justify-content:center;
+    overflow-x:auto;
+  }
+  .mermaid{
+    font-family:'Outfit',sans-serif !important;
+    width:100%;
+  }
+  .mermaid svg{
+    width:100% !important;
+    max-width:none !important;
+    height:auto !important;
+    min-width:1100px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <p class="label">Diagram — M1 <span class="th" lang="th">แผนภาพ — M1</span></p>
+  <h1>VENDOR LOOP — RECURRING<span class="th" lang="th">วงจรผู้ขาย — รายจ่ายประจำ</span></h1>
+  <p lang="en">Recurring vendor payments: inbound email captured via OCR, through approval to payment, funded from the cash pool. Open this file directly in a browser — it renders live, no external tool needed.</p>
+  <p lang="th">รายจ่ายผู้ขายประจำ: อีเมลที่เข้ามาถูกบันทึกด้วย OCR ผ่านการอนุมัติไปจนถึงการจ่ายเงิน โดยจ่ายจากบัญชีเงินสดกลาง เปิดไฟล์นี้ในเบราว์เซอร์ได้โดยตรง แสดงผลได้ทันทีโดยไม่ต้องใช้เครื่องมือภายนอก</p>
+</header>
+
+<section>
+  <div class="diagram-box">
+    <pre class="mermaid">
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'Outfit, sans-serif','fontSize':'15px','primaryColor':'#F5F4F1','primaryTextColor':'#141414','primaryBorderColor':'#141414','lineColor':'#141414','background':'#FFFFFF'}}}%%
+flowchart LR
+    Pool(("Cash<br/><span style='font-family:Prompt,sans-serif'>บัญชีเงินสด</span>"))
+
+    subgraph VREC["VENDOR LOOP — Recurring — M1 / <span style='font-family:Prompt,sans-serif'>วงจรผู้ขาย — รายจ่ายประจำ</span>"]
+        direction LR
+        EmailInbox["Email Inbox<br/><span style='font-family:Prompt,sans-serif'>อีเมลเข้า</span>"] --> LarkInbox["Import to Lark Inbox<br/><span style='font-family:Prompt,sans-serif'>นำเข้าสู่ Lark Inbox</span>"] --> OCR["OCR Import<br/><span style='font-family:Prompt,sans-serif'>นำเข้าด้วย OCR</span>"] --> APBatch["Filter &amp; Create AP Batch<br/><span style='font-family:Prompt,sans-serif'>กรองและสร้างชุดใบตั้งหนี้</span>"] --> TRCloud["Import to TRCloud<br/><span style='font-family:Prompt,sans-serif'>นำเข้าสู่ TRCloud</span>"] --> PayAppr2["Payment Approval<br/><span style='font-family:Prompt,sans-serif'>อนุมัติการจ่ายเงิน</span>"]
+        PayAppr2 --> WHT2["WHT Certificate<br/><span style='font-family:Prompt,sans-serif'>หนังสือรับรองหักภาษี</span>"]
+        PayAppr2 --> Pay2["Payment<br/><span style='font-family:Prompt,sans-serif'>การจ่ายเงิน</span>"]
+    end
+    RecVendor["Recurring Vendor<br/><span style='font-family:Prompt,sans-serif'>ผู้ขายประจำ</span>"]
+
+    Pool -.funds.-> Pay2
+    WHT2 --> RecVendor
+    Pay2 ==>|" "| RecVendor
+
+    classDef pool fill:#8B5E3C,stroke:#8B5E3C,stroke-width:1px,color:#FFFFFF
+    classDef vrecNode fill:#E3E1DC,stroke:#141414,stroke-width:1.5px,stroke-dasharray: 1 3,color:#141414
+    classDef vrecEmph fill:#E3E1DC,stroke:#141414,stroke-width:4px,stroke-dasharray: 1 3,color:#141414
+
+    class Pool pool
+    class EmailInbox,LarkInbox,OCR,APBatch,TRCloud,PayAppr2,WHT2,Pay2 vrecNode
+    class RecVendor vrecEmph
+    </pre>
+  </div>
+</section>
+
+<script>
+  mermaid.initialize({ startOnLoad: true, theme: 'base', securityLevel: 'loose' });
+</script>
+
+</body>
+</html>

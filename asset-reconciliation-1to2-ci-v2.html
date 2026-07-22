@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1:2 Coffee — Asset Reconciliation Trace</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Prompt:wght@300;400;500;600&family=IBM+Plex+Mono:wght@600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.9.1/mermaid.min.js"></script>
+<style>
+  :root{
+    --ink:#141414;
+    --paper:#FFFFFF;
+    --stone:#F5F4F1;
+    --roast:#8B5E3C;
+    --grey:#6B6B6B;
+    --mist:#E3E1DC;
+  }
+
+  *{box-sizing:border-box;}
+
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Outfit', sans-serif;
+    font-weight:300;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .th{ font-family:'Prompt', sans-serif; }
+
+  .wrap{
+    max-width:1180px;
+    margin:0 auto;
+    padding:56px 32px 80px;
+  }
+
+  .label{
+    font-family:'IBM Plex Mono', monospace;
+    font-weight:600;
+    font-size:13px;
+    letter-spacing:2.5px;
+    color:var(--roast);
+    text-transform:uppercase;
+    margin:0 0 22px;
+  }
+
+  header h1{
+    font-family:'Outfit', sans-serif;
+    font-weight:700;
+    font-size:28px;
+    color:var(--ink);
+    margin:0 0 6px;
+    line-height:1.25;
+  }
+  header h1 .accent{ color:var(--roast); }
+
+  header .th-title{
+    font-family:'Prompt', sans-serif;
+    font-weight:600;
+    font-size:20px;
+    color:var(--ink);
+    margin:0 0 26px;
+  }
+
+  header p{
+    font-family:'Outfit', sans-serif;
+    font-weight:300;
+    font-size:17px;
+    line-height:1.7;
+    color:var(--ink);
+    max-width:820px;
+    margin:0 0 8px;
+  }
+
+  header p.th{
+    font-family:'Prompt', sans-serif;
+    font-weight:300;
+    font-size:17px;
+    line-height:1.85;
+    color:var(--grey);
+    max-width:820px;
+    margin:0 0 8px;
+  }
+
+  section.diagram-section{ margin:0; }
+
+  .diagram-box{
+    margin:44px 0;
+    background:var(--stone);
+    border:1px solid var(--mist);
+    border-radius:14px;
+    padding:44px 40px;
+    overflow-x:auto;
+  }
+
+  .mermaid svg{
+    width:100% !important;
+    max-width:none !important;
+    height:auto !important;
+    min-width:1100px;
+  }
+
+  .legend{
+    display:flex;
+    gap:24px;
+    align-items:center;
+    margin:-20px 0 40px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.08em;
+    color:var(--grey);
+    text-transform:uppercase;
+  }
+  .legend .swatch{
+    display:inline-block;
+    width:11px;
+    height:11px;
+    border-radius:3px;
+    margin-right:6px;
+    vertical-align:-1px;
+  }
+  .legend .swatch.step{ background:var(--stone); border:1.5px solid var(--ink); }
+  .legend .swatch.hub{ background:var(--roast); border:1.5px solid var(--roast); }
+
+  .cards{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:16px;
+    margin:0 0 36px;
+  }
+
+  .explain-card{
+    background:var(--paper);
+    border:1px solid var(--mist);
+    border-radius:12px;
+    padding:22px 20px;
+  }
+
+  .explain-card.is-hub{
+    border-color:var(--roast);
+  }
+
+  .explain-card .num{
+    font-family:'IBM Plex Mono', monospace;
+    font-weight:600;
+    font-size:12px;
+    letter-spacing:1.5px;
+    color:var(--roast);
+    margin-bottom:10px;
+  }
+
+  .explain-card h3{
+    font-family:'Outfit', sans-serif;
+    font-weight:600;
+    font-size:17px;
+    color:var(--ink);
+    margin:0 0 4px;
+  }
+
+  .explain-card h3 .th{
+    display:block;
+    font-family:'Prompt', sans-serif;
+    font-weight:500;
+    font-size:15px;
+    color:var(--grey);
+    margin-top:2px;
+  }
+
+  .explain-card p{
+    font-family:'Outfit', sans-serif;
+    font-weight:300;
+    font-size:14px;
+    line-height:1.6;
+    color:var(--ink);
+    margin:10px 0 0;
+  }
+
+  .explain-card p.th{
+    font-family:'Prompt', sans-serif;
+    font-weight:300;
+    font-size:14px;
+    line-height:1.75;
+    color:var(--grey);
+    margin:6px 0 0;
+  }
+
+  .callout{
+    margin:0;
+    background:var(--stone);
+    border-left:3px solid var(--roast);
+    border-radius:0 12px 12px 0;
+    padding:22px 26px;
+  }
+
+  .callout p{
+    font-family:'Outfit', sans-serif;
+    font-weight:400;
+    font-size:15px;
+    line-height:1.7;
+    color:var(--ink);
+    margin:0 0 10px;
+  }
+
+  .callout p.th{
+    font-family:'Prompt', sans-serif;
+    font-weight:400;
+    font-size:15px;
+    line-height:1.85;
+    color:var(--grey);
+    margin:0;
+  }
+
+  @media (max-width: 900px){
+    .cards{ grid-template-columns:repeat(2, 1fr); }
+  }
+  @media (max-width: 560px){
+    .cards{ grid-template-columns:1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <p class="label">M4 · Fixed Asset Reconciliation</p>
+
+  <header>
+    <h1>Invoice to Floor<span class="accent">:</span> the four&#8209;point trace</h1>
+    <p class="th-title th">จากใบแจ้งหนี้ถึงหน้างาน: การตรวจสอบสี่จุด</p>
+    <p>A break between any two adjacent checkpoints pinpoints the root cause &mdash; miscoding, a missing capitalization policy, or an asset that was never recorded.</p>
+    <p class="th">จุดที่ขาดการเชื่อมต่อระหว่างสองขั้นตอนใดๆ จะชี้ต้นตอของปัญหา ไม่ว่าจะเป็นการลงบัญชีผิดประเภท นโยบายการรับรู้เป็นทุนที่ยังไม่มี หรือทรัพย์สินที่ไม่เคยถูกบันทึก</p>
+  </header>
+
+  <section class="diagram-section">
+    <div class="diagram-box">
+      <pre class="mermaid">
+flowchart LR
+    A["Invoice / Receipt<br/><span style='font-family:Prompt,sans-serif'>ใบแจ้งหนี้ / ใบเสร็จ</span>"]
+    B["Book (GL)<br/><span style='font-family:Prompt,sans-serif'>สมุดบัญชี (GL)</span>"]
+    C["Registry<br/><span style='font-family:Prompt,sans-serif'>ทะเบียนทรัพย์สิน</span>"]
+    D((("Physical Asset<br/><span style='font-family:Prompt,sans-serif'>ทรัพย์สินจริง</span>")))
+
+    A -->|"Right GL account?<br/><span style='font-family:Prompt,sans-serif'>รหัสบัญชีถูกต้องหรือไม่</span>"| B
+    B -->|"Ties to GL total?<br/><span style='font-family:Prompt,sans-serif'>ยอดตรงกับบัญชีหรือไม่</span>"| C
+    C ==>|"Exists as recorded?<br/><span style='font-family:Prompt,sans-serif'>มีอยู่จริงหรือไม่</span>"| D
+    D -.->|"Found but not listed?<br/><span style='font-family:Prompt,sans-serif'>พบแต่ไม่มีในทะเบียน</span>"| C
+
+    classDef step fill:#F5F4F1,stroke:#141414,stroke-width:1.5px,color:#141414;
+    classDef hub fill:#8B5E3C,stroke:#8B5E3C,stroke-width:1.5px,color:#FFFFFF;
+    class A,B,C step;
+    class D hub;
+      </pre>
+    </div>
+
+    <div class="legend">
+      <span><span class="swatch step"></span>Checkpoint / <span class="th">จุดตรวจสอบ</span></span>
+      <span><span class="swatch hub"></span>Physical Asset — the ground truth / <span class="th">ทรัพย์สินจริง — ความจริงที่ต้องตรงกัน</span></span>
+    </div>
+  </section>
+
+  <div class="cards">
+    <div class="explain-card">
+      <div class="num">01</div>
+      <h3>Invoice / Receipt<span class="th">ใบแจ้งหนี้ / ใบเสร็จ</span></h3>
+      <p>The vendor's source document: true cost, date, and vendor. The reference point everything else should tie back to.</p>
+      <p class="th">เอกสารต้นทางจากผู้ขาย บอกต้นทุน วันที่ และผู้ขายที่แท้จริง เป็นจุดอ้างอิงที่ทุกอย่างต้องตรงกัน</p>
+    </div>
+    <div class="explain-card">
+      <div class="num">02</div>
+      <h3>Book (GL)<span class="th">สมุดบัญชี (GL)</span></h3>
+      <p>Where the purchase gets coded. Land it in an expense account instead of a fixed-asset account, and the item disappears from the registry entirely.</p>
+      <p class="th">จุดที่รายการซื้อถูกลงบัญชี หากลงเป็นบัญชีค่าใช้จ่ายแทนที่จะเป็นบัญชีสินทรัพย์ถาวร รายการนั้นจะหายไปจากทะเบียนทันที</p>
+    </div>
+    <div class="explain-card">
+      <div class="num">03</div>
+      <h3>Registry<span class="th">ทะเบียนทรัพย์สิน</span></h3>
+      <p>The itemized fixed asset list: item, location, useful life. Its total should always tie back to the GL control account.</p>
+      <p class="th">รายการสินทรัพย์แบบละเอียด ทั้งชื่อ สถานที่ และอายุการใช้งาน ยอดรวมต้องตรงกับบัญชีคุมยอดใน GL เสมอ</p>
+    </div>
+    <div class="explain-card is-hub">
+      <div class="num">04 — HUB</div>
+      <h3>Physical Asset<span class="th">ทรัพย์สินจริง</span></h3>
+      <p>The item itself, on the floor at the branch, confirmed with a tag or QR code and a photo — the ground truth every other record should match.</p>
+      <p class="th">ตัวทรัพย์สินที่หน้างานในสาขา ยืนยันด้วยป้ายหรือ QR โค้ดพร้อมรูปถ่าย เป็นความจริงที่ทุกบันทึกต้องตรงกัน</p>
+    </div>
+  </div>
+
+  <div class="callout">
+    <p><strong>Invoice &rarr; Book</strong> is already covered by the M5 three-way match (PO / receipt / invoice) &mdash; reuse it. <strong>Registry &harr; Physical</strong> is the new leg: it needs a branch walk and asset tagging to build.</p>
+    <p class="th">ใบแจ้งหนี้ → บัญชี ครอบคลุมอยู่แล้วในระบบตรวจสอบ 3 ทางของ M5 (PO / ใบรับของ / ใบแจ้งหนี้) — นำมาใช้ต่อได้เลย ส่วนทะเบียน ↔ ทรัพย์สินจริง คือส่วนที่ต้องสร้างใหม่ ต้องเดินสำรวจสาขาและติดป้ายทรัพย์สิน</p>
+  </div>
+
+</div>
+
+<script>
+  mermaid.initialize({
+    startOnLoad: true,
+    theme: 'base',
+    themeVariables: {
+      background: '#FFFFFF',
+      primaryColor: '#F5F4F1',
+      primaryBorderColor: '#141414',
+      primaryTextColor: '#141414',
+      lineColor: '#141414',
+      secondaryColor: '#F5F4F1',
+      tertiaryColor: '#FFFFFF',
+      fontFamily: 'Outfit, sans-serif',
+      fontSize: '16px'
+    },
+    flowchart: {
+      curve: 'basis',
+      htmlLabels: true,
+      nodeSpacing: 60,
+      rankSpacing: 90
+    }
+  });
+</script>
+</body>
+</html>
